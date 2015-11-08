@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="../../../dbxsd/dataset.xsd">
+
+    <performer PERFORMER_ID="1" TYPE="0" STATUS="0" NAME="PERFORMER_NAME_1"/>
+    <performer PERFORMER_ID="2" TYPE="1" STATUS="1" NAME="PERFORMER_NAME_2"/>
+    <task NAME="TASK_NAME_1" CREATION_TIME="2015-07-01 00:00:00.000" PERFORMER_ID="1" PRIORITY="1" STATUS="0" TASK_ID="1" TYPE="0"/>
+    <task NAME="TASK_NAME_2" CREATION_TIME="2015-11-05 00:00:00.000" PERFORMER_ID="2" PRIORITY="2" STATUS="1" TASK_ID="2" TYPE="1"/>
+
+
+</dataset>

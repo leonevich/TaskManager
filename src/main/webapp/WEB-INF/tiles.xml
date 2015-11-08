@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+    <definition name="base.definition" template="/WEB-INF/views/layouts/default.jsp">
+        <put-attribute name="title" value=""/>
+        <put-attribute name="header" value="/WEB-INF/views/common/header.jsp"/>
+        <put-attribute name="rightColumn" value="/WEB-INF/views/common/rightColumn.jsp"/>
+        <put-attribute name="leftColumn" value="/WEB-INF/views/common/leftColumn.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp"/>
+    </definition>
+
+
+    <definition name="login" extends="base.definition">
+        <put-attribute name="rightColumn" value=""/>
+        <put-attribute name="leftColumn" value="/WEB-INF/views/layouts/login.jsp"/>
+    </definition>
+    <definition name="error404" extends="base.definition">
+        <put-attribute name="leftColumn" value="/WEB-INF/views/layouts/error404.jsp"/>
+    </definition>
+    <definition name="performer" extends="base.definition">
+        <put-attribute name="leftColumn" value="/WEB-INF/views/layouts/performer.jsp"/>
+        <put-attribute name="rightColumn" value="/WEB-INF/views/layouts/add_task.jsp"/>
+    </definition>
+    <definition name="performers" extends="base.definition">
+        <put-attribute name="leftColumn" value="/WEB-INF/views/layouts/performers.jsp"/>
+        <put-attribute name="rightColumn" value="/WEB-INF/views/layouts/add_performer.jsp"/>
+    </definition>
+    <definition name="tasks" extends="base.definition">
+        <put-attribute name="leftColumn" value="/WEB-INF/views/layouts/tasks.jsp"/>
+    </definition>
+    <definition name="edit_task" extends="base.definition">
+        <put-attribute name="leftColumn" value="/WEB-INF/views/layouts/edit_task.jsp"/>
+    </definition>
+    <definition name="edit_performer" extends="base.definition">
+        <put-attribute name="leftColumn" value="/WEB-INF/views/layouts/edit_performer.jsp"/>
+    </definition>
+</tiles-definitions>
