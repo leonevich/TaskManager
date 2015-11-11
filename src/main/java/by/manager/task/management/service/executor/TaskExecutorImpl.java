@@ -8,7 +8,6 @@ import by.manager.task.utils.errors.exceptions.executor.TaskExecutorError;
 import by.manager.task.utils.errors.exceptions.executor.TaskExecutorException;
 import by.manager.task.utils.errors.exceptions.executor.read.ReadExecutorException;
 import by.manager.task.utils.errors.exceptions.task.service.TaskServiceException;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -44,13 +43,13 @@ public class TaskExecutorImpl implements TaskExecutor {
                 if (taskExecutor != null) {
                     task.setStatus(TaskStatus.IN_PROGRESS);
                     try {
-                        taskService.changeTaskStatus(task);
+                        taskService.saveTaskStatus(task);
                     } catch (TaskServiceException e) {
                         throw new TaskExecutorException(TaskExecutorError.TASK_EXECUTOR_000);
                     }
                     taskExecutor.executeTask(task);
                     try {
-                        taskService.changeTaskStatus(task);
+                        taskService.saveTaskStatus(task);
                     } catch (TaskServiceException e) {
                         throw new TaskExecutorException(TaskExecutorError.TASK_EXECUTOR_000);
                     }

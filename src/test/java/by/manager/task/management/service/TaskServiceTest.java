@@ -145,10 +145,10 @@ public class TaskServiceTest {
 
     @Test(expected = TaskServiceException.class)
     public void changeTaskStatusTest() throws TaskServiceException, TaskDaoException {
-        taskService.changeTaskStatus(TASK_VO_1);
-        verify(taskDao).changeTaskStatus(any(TaskVO.class));
+        taskService.saveTaskStatus(TASK_VO_1);
+        verify(taskDao).saveTaskStatus(any(TaskVO.class));
 
-        doThrow(new TaskDaoException()).when(taskDao).changeTaskStatus(any(TaskVO.class));
-        taskService.changeTaskStatus(TASK_VO_1);
+        doThrow(new TaskDaoException()).when(taskDao).saveTaskStatus(any(TaskVO.class));
+        taskService.saveTaskStatus(TASK_VO_1);
     }
 }

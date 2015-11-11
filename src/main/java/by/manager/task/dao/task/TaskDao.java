@@ -43,7 +43,7 @@ public interface TaskDao {
      * @param taskVO
      * @throws TaskDaoException
      */
-    void changeTaskStatus(TaskVO taskVO) throws TaskDaoException;
+    void saveTaskStatus(TaskVO taskVO) throws TaskDaoException;
 
     /**
      * @return

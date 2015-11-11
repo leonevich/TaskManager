@@ -9,8 +9,4 @@ import org.springframework.stereotype.Component;
 public class DataAspect {
     private static Logger log = Logger.getLogger(DataAspect.class);
 
-    public DataAspect() {
-    }
-
-
 }

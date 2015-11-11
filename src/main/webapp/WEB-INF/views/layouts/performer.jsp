@@ -7,18 +7,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <div id="templatemo_main_leftcol">
 
-    <%-- <div id="templatemo_topnews_one">
-         <h2>< c:out value="${}"/></h2>
-
-         <h3 style="color: #999999"><c:out value="${requestScope.news.date}"/></h3>
-
-         <h3 style="color: #000000"><p><c:out value="${requestScope.news.textNews}"/></p></h3>
-     </div>
-     <div>
-         <h2>Обсуждение</h2>
-     </div>--%>
-
-
     <sec:authorize ifAnyGranted="ROLE_ANONYMOUS">
         <div class="templatemo_mesage">
             <a href="/TaskManager/login"><spring:message code="label.login"/></a>

@@ -116,7 +116,7 @@ public class TaskDaoTest extends UnitilsJUnit4 {
         taskDao.getSession().clear();
         //------------------------------
 
-        taskDao.changeTaskStatus(newTaskStatusVO);
+        taskDao.saveTaskStatus(newTaskStatusVO);
         assertEquals(TASK_STATUS_2, taskDao.getTaskById(TASK_ID_1).getStatus());
     }
 

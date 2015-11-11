@@ -87,9 +87,9 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     @Transactional
-    public void changeTaskStatus(TaskVO taskVO) throws TaskServiceException {
+    public void saveTaskStatus(TaskVO taskVO) throws TaskServiceException {
         try {
-            taskDao.changeTaskStatus(taskVO);
+            taskDao.saveTaskStatus(taskVO);
         } catch (TaskDaoException e) {
             throw new TaskServiceException(e);
         }

@@ -45,7 +45,7 @@ public interface TaskService {
      * @param taskVO
      * @throws TaskServiceException
      */
-    void changeTaskStatus(TaskVO taskVO) throws TaskServiceException;
+    void saveTaskStatus(TaskVO taskVO) throws TaskServiceException;
 
     /**
      * @param taskId

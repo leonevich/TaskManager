@@ -87,7 +87,7 @@ public class TaskDaoImpl extends BaseDao<Task, Long> implements TaskDao {
     }
 
     @Override
-    public void changeTaskStatus(TaskVO taskVO) throws TaskDaoException {
+    public void saveTaskStatus(TaskVO taskVO) throws TaskDaoException {
         TaskStatus taskStatus = taskVO.getStatus();
         Long taskId = taskVO.getId();
         String hql = properties.getProperty("task.changeTaskStatus");
@@ -118,16 +118,14 @@ public class TaskDaoImpl extends BaseDao<Task, Long> implements TaskDao {
         } catch (DaoException e) {
             throw new TaskDaoException(e);
         }
-        for (Integer currentPriority : priorityList) {
-            prioritySet.remove(currentPriority);
-        }
+        prioritySet.removeAll(priorityList);
         return prioritySet;
     }
 
     private List<TaskVO> getTaskVOListFromTaskList(List<Task> taskList) {
         List<TaskVO> taskVOList = new ArrayList<>();
-        for (Task currentTtask : taskList) {
-            taskVOList.add(new TaskVO(currentTtask.getId(), currentTtask.getName(), currentTtask.getCreationTime(), currentTtask.getStatus(), currentTtask.getType(), currentTtask.getPriority()));
+        for (Task currentTask : taskList) {
+            taskVOList.add(new TaskVO(currentTask.getId(), currentTask.getName(), currentTask.getCreationTime(), currentTask.getStatus(), currentTask.getType(), currentTask.getPriority()));
         }
         return taskVOList;
     }
